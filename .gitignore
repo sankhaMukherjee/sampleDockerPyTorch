@@ -113,6 +113,10 @@ ENV/
 env.bak/
 venv.bak/
 
+# The data and models folders should not be included here
+data/
+models/
+
 # Spyder project settings
 .spyderproject
 .spyproject

@@ -35,9 +35,11 @@ specific model.
 A saved model is an entire application that has, at a minimum, the following
 methods:
 
- - `model.fit(X, y)`
+ - `model.fit(X, y, N=100)`
  - `model.predict(X)`
- - `model.saveModel('location')`
- - `model.loadModel('location')`
+ - `model.saveParams(folder)`
+ - `model.loadParams(folder)`
+ - `model.saveModel(folder)`
 
-
+Hence, the model is expected to contain the optimizer and everything else that is
+necessary to solve the problem. 
