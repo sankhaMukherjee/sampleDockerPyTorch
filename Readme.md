@@ -25,6 +25,16 @@ The data is present in the bucket `s3://sankha-test-data-folder` as files
  - `s3://sankha-test-data-folder\X.npy`
  - `s3://sankha-test-data-folder\y.npy`
 
+### 2.1.1. Downloading the data
+
+The following command 
+    
+`dataSource='sankha-test-data-folder' bin/dataDownload.sh`
+
+can be used to download the data from the designated S3 bucket. This is directly
+downloaded into the data folder. If the folder does not exist, this folder will
+be created first, before the data is downloaded.
+
 ## 2.2. Location of the models
 
 The models are available in an online location in an S3 bucket. The base location
