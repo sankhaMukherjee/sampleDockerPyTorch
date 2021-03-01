@@ -1,11 +1,11 @@
-# sampleDockerPyTorch
+# 1. sampleDockerPyTorch
 
 This is a simple example that will be used to construct a project
 that can be used as a template for creating a simple dockerized
 project.
 
 
-# External Data and Models
+# 2. External Data and Models
 
 In this simple example, there is only a single location for the models
 and the data. This will be different for your own Kubeflow projects wherein
@@ -14,7 +14,7 @@ models. This will be dealt with at the Kubeflow level, through the use of
 environment variables, and configuration files. Thisis detailed in the next
 Section.
 
-# Location of the data
+## 2.1. Location of the data
 
 The data is available in an online location in an S3 bucket. The details
 of creating this random data is present within this 
@@ -25,7 +25,7 @@ The data is present in the bucket `s3://sankha-test-data-folder` as files
  - `s3://sankha-test-data-folder\X.npy`
  - `s3://sankha-test-data-folder\y.npy`
 
-# Location of the models
+## 2.2. Location of the models
 
 The models are available in an online location in an S3 bucket. The base location
 of the model files are present within the bucket `s3://sankha-test-models-folder`,
