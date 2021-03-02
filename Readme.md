@@ -4,7 +4,6 @@ This is a simple example that will be used to construct a project
 that can be used as a template for creating a simple dockerized
 project.
 
-
 # 2. External Data and Models
 
 In this simple example, there is only a single location for the models
