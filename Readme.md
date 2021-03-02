@@ -144,3 +144,8 @@ loss = 1.5160093232852168e-12
 Trained model: Model weights [someID]: w = [2.000e+00, 3.000e+00], b = [2.738e-06]
 ```
 
+# 3. Docker container
+
+A Dockerfile is present. Use this to create a docker container with the command shown below ...
+
+`docker build -t sampletorch .`
