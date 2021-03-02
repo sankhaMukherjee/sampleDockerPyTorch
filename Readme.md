@@ -33,7 +33,8 @@ The following command
 
 can be used to download the data from the designated S3 bucket. This is directly
 downloaded into the data folder. If the folder does not exist, this folder will
-be created first, before the data is downloaded.
+be created first, before the data is downloaded. This can later be used by `kubectl`
+to download the data into a node before starting a new training run.
 
 ## 2.2. Location of the models
 
