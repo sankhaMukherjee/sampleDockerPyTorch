@@ -11,8 +11,9 @@ def main():
     y = torch.from_numpy( y )
 
     model = simpleModel.Model(M=2, modelID='someID')
-    loss = model.fit(X, y, N=1000, printEvery=20)
+    loss = model.fit(X, y, N=5000, printEvery=100)
     print(loss)
+    print(f'Trained model: {model}')
 
     model.saveModel(folder='models/testModel')
 

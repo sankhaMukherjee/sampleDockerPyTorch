@@ -54,3 +54,33 @@ methods:
 
 Hence, the model is expected to contain the optimizer and everything else that is
 necessary to solve the problem. 
+
+
+### 2.2.1. Training a simple model
+
+An example of how a simple model can be trained is shown in the file `src/trainInitModel.py`.
+This function trains the model that is defined within the file `src\lib\simpleModel.py`. This
+file defined a class `Model()` that contains all the methods described in Section 2.2., and can
+be used for training a set of models based upon the data provided to it. 
+
+`python3 src/trainInitModel.py`
+
+The result is as follows:
+
+```sh
+$ python3 src/trainInitModelpy
+loss = 7.230027198791504
+loss = 1.1745001077651978
+loss = 0.316214919090271
+loss = 0.2415977120399475
+loss = 0.19955676794052124
+... <-- some missing values here
+loss = 2.3827268283427294e-12
+loss = 1.936336724642218e-12
+loss = 1.7655173113403921e-12
+[7.23002720e+00 7.12352324e+00 7.01786709e+00 ... 1.51600932e-12
+ 1.51600932e-12 1.51600932e-12]
+Trained model: Model weights [someID]: w = [2.000e+00, 3.000e+00], b = [2.739e-06]
+```
+
+As can be seen, the model was able to find the weight vector (2,3) that the data was created with.
