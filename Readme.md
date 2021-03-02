@@ -84,3 +84,64 @@ Trained model: Model weights [someID]: w = [2.000e+00, 3.000e+00], b = [2.739e-0
 ```
 
 As can be seen, the model was able to find the weight vector (2,3) that the data was created with.
+
+### 2.2.2. Model Path
+
+Saved models may be kept in a simple folder structure as shown below. In this case, a model folder
+has been created called `models/testModel/`. 
+
+```sh
+$ tree models
+
+models
+└── testModel
+    ├── metaData-models.json
+    ├── modelFile-someID-2021-03-02--23-48-50.pth
+    ├── modelFile-someID-2021-03-02--23-55-21.pth
+    ├── modelFile-someID-2021-03-02--23-56-12.pth
+    └── modelFile-someID-2021-03-02--23-56-49.pth
+```
+
+These have also been pushed to the aws models folder (`aws s3 cp models/ s3://sankha-test-models-folder --recursive`) ...
+
+```sh
+$ aws s3 ls sankha-test-models-folder/testModel --recursive
+
+2021-03-03 00:16:15        432 testModel/metaData-models.json
+2021-03-03 00:16:15       2881 testModel/modelFile-someID-2021-03-02--23-48-50.pth
+2021-03-03 00:16:15       2881 testModel/modelFile-someID-2021-03-02--23-55-21.pth
+2021-03-03 00:16:15       2881 testModel/modelFile-someID-2021-03-02--23-56-12.pth
+2021-03-03 00:16:15       2881 testModel/modelFile-someID-2021-03-02--23-56-49.pth
+```
+
+### 2.2.3. Downloading a particular model
+
+As with the data source, it is possible to download the model from the S3 bucket directly
+with the use of a shell script with the following command:
+
+`model='testModel/modelFile-someID-2021-03-02--23-56-49.pth' bin/modelDownload.sh`
+
+Models will always be downloaded from the S3 bucket into the same file:
+
+`models/mainModel.pth`
+
+This way, the model that is to be trained can always be guarenteed to be in the same location.
+
+# 2.2.4. Reloading a model and retraining it
+
+It is possible to download a model, reload it, and retrain it. This can be done easily with the
+following code `src/retrainModel.py`:
+
+```sh
+$ python3 src/retrainModel.py
+
+loss = 1.5160331757330114e-12
+...
+loss = 1.5160093232852168e-12
+loss = 1.5160093232852168e-12
+[1.51603318e-12 1.51603318e-12 1.38515675e-12 1.38515675e-12
+ 1.51603318e-12 1.51600932e-12 1.51600932e-12 1.51600932e-12
+ 1.51600932e-12 1.51600932e-12]
+Trained model: Model weights [someID]: w = [2.000e+00, 3.000e+00], b = [2.738e-06]
+```
+
