@@ -148,4 +148,6 @@ Trained model: Model weights [someID]: w = [2.000e+00, 3.000e+00], b = [2.738e-0
 
 A Dockerfile is present. Use this to create a docker container with the command shown below ...
 
-`docker build -t sampletorch .`
+`docker build -t simple-pytorch .`
+
+Later run this with the command: `docker run simple-torch`
